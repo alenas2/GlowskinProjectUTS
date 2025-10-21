@@ -1,1 +1,10 @@
 # GlowskinProjectUTS
+GlowSkin adalah sebuah website e-commerce sederhana yang dibuat untuk menjual berbagai produk skincare dan perawatan wajah. Website ini dikembangkan sebagai proyek UTS dengan tujuan menampilkan simulasi toko online modern yang responsif, menarik, dan mudah digunakan. GlowSkin dirancang agar pengguna dapat menjelajahi berbagai kategori produk seperti serum, moisturizer, sunscreen, cleanser, dan masker, lengkap dengan deskripsi, harga, serta rekomendasi jenis kulit yang sesuai.
+
+Tampilan GlowSkin menggunakan desain yang bersih dan elegan dengan perpaduan warna lembut untuk memberikan kesan feminin dan profesional. Website ini juga mendukung mode terang dan gelap (dark mode) agar pengguna dapat menyesuaikan tampilan sesuai kenyamanan mereka. Selain itu, sistem keranjang belanja memungkinkan pengguna menambahkan, menghapus, serta mengatur jumlah produk sebelum melakukan checkout.
+
+GlowSkin dibangun menggunakan teknologi berbasis web modern seperti HTML5, CSS3, Bootstrap 5, dan JavaScript (ES6). Interaktivitas seperti filter produk, form kontak, dan sistem keranjang belanja diatur menggunakan JavaScript, sementara data keranjang disimpan secara lokal dengan LocalStorage agar tetap tersimpan meskipun halaman dimuat ulang.
+
+Website ini terdiri dari beberapa halaman utama, yaitu halaman beranda (index.html), halaman daftar produk (products.html), halaman detail produk (detailproducts.html dan detailproducts2.html), halaman keranjang belanja (keranjang.html), halaman kontak (contact.html), serta halaman tentang kami (aboutus.html). Setiap halaman diatur menggunakan file CSS utama (style.css) dan file JavaScript (script.js) yang mengatur fungsi interaktif di seluruh website.
+
+Secara keseluruhan, GlowSkin bertujuan memberikan pengalaman berbelanja online yang menyenangkan dan informatif bagi pengguna, serta menjadi media pembelajaran dalam penerapan teknologi web front-end modern. Website ini juga merepresentasikan konsep “glow from within,” yaitu kecantikan alami yang muncul dari perawatan kulit yang tepat.
