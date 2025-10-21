@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GlowSkin - Detail Produk</title>
+    <link href="bootstrap-5.3.8-dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header class="custom-header">
+        <!-- Header dengan Bootstrap Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-gradient">
+        <div class="container">
+            <img src="image/logo.png" alt="logo" width="120" height="120" class="d-inline-block align-text-top">
+            <a class="navbar-brand d-flex align-items-center" href="index.html">
+                <span>GlowSkin</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link active text-white" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link text-white" href="products.html">Produk</a></li>
+                </ul>
+            </div>
+
+            <div class="d-flex ms-2 order-lg-last">
+                <a href="keranjang.html" class="icon-btn" aria-label="Shopping cart">🛒</a>
+                <button id="darkModeToggle" type="button" class="icon-btn" aria-label="Toggle dark mode">🌙</button>
+            </div>
+    </header>
+
+    <main class="py-5">
+        <div class="container">
+            <!-- Breadcrumb -->
+            <nav aria-label="breadcrumb" class="mb-4">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                    <li class="breadcrumb-item"><a href="products.html">Produk</a></li>
+                    <li class="breadcrumb-item active" id="productBreadcrumb">Detail Produk</li>
+                </ol>
+            </nav>
+
+            <div class="row">
+                <!-- Product Images -->
+                <div class="col-md-6">
+                    <div class="product-gallery">
+                        <img id="mainProductImage" src="image/vitc.jpg" alt="Product Image" class="img-fluid rounded main-product-image">
+                        
+                    </div>
+                </div>
+
+                <!-- Product Info -->
+                <div class="col-md-6">
+                    <div class="product-detail-info">
+                        <span class="product-category badge bg-primary mb-2" id="productCategory">Serum</span>
+                        <h1 id="productName" class="product-detail-title">Hanasui Vitamin C Serum</h1>
+                        <div class="product-rating mb-3">
+                            <span class="stars">★★★★★</span>
+                            <span class="rating-text">(4.8/5 • 127 reviews)</span>
+                        </div>
+                        <div class="product-price-section mb-4">
+                            <span id="productPrice" class="product-detail-price">Rp 26.226</span>
+                        </div>
+
+                        <!-- Skin Type -->
+                        <div class="skin-type-section mb-4">
+                            <h6>Untuk Jenis Kulit:</h6>
+                            <div id="skinTypeBadges" class="skin-type-badges">
+                                <span class="badge bg-info me-1">Normal</span>
+                                <span class="badge bg-info me-1">Kering</span>
+                            </div>
+                        </div>
+
+                        <!-- Product Features -->
+                        <div class="product-features mb-4">
+                            <h6>Keunggulan Produk:</h6>
+                            <ul class="feature-list">
+                                <li>✅ Mengandung Vitamin C 20%</li>
+                                <li>✅ Brightening & Anti-aging</li>
+                                <li>✅ Texture ringan, cepat meresap</li>
+                                <li>✅ Non-comedogenic</li>
+                                <li>✅ Cocok untuk daily use</li>
+                            </ul>
+                        </div>
+
+                        <!-- Quantity & Add to Cart -->
+                        <div class="purchase-section">
+                            <div class="quantity-selector mb-3">
+                                <label for="quantity" class="form-label">Jumlah:</label>
+                                <div class="input-group" style="width: 150px;">
+                                    <button class="btn btn-outline-secondary" type="button" onclick="decreaseQuantity()">-</button>
+                                    <input type="number" class="form-control text-center" id="quantity" value="1" min="1" max="10">
+                                    <button class="btn btn-outline-secondary" type="button" onclick="increaseQuantity()">+</button>
+                                </div>
+                            </div>
+
+                            <div class="action-buttons">
+                                <button class="btn btn-primary btn-lg me-2" onclick="addToCartFromPage()">
+                                    🛒 Tambah ke Keranjang
+                                </button>
+                                <button class="btn btn-outline-primary btn-lg" onclick="buyNow()">
+                                    💳 Beli Sekarang
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product Details Tabs -->
+            <div class="row mt-5">
+                <div class="col-12">
+                    <ul class="nav nav-tabs" id="productTabs" role="tablist">
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link active" id="description-tab" data-bs-toggle="tab" 
+                                    data-bs-target="#description" type="button" role="tab">Deskripsi</button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link" id="ingredients-tab" data-bs-toggle="tab" 
+                                    data-bs-target="#ingredients" type="button" role="tab">Ingredients</button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link" id="how-to-use-tab" data-bs-toggle="tab" 
+                                    data-bs-target="#how-to-use" type="button" role="tab">Cara Penggunaan</button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link" id="reviews-tab" data-bs-toggle="tab" 
+                                    data-bs-target="#reviews" type="button" role="tab">Reviews</button>
+                        </li>
+                    </ul>
+
+                    <div class="tab-content p-4 border border-top-0 rounded-bottom" id="productTabContent">
+                        <!-- Description Tab -->
+                        <div class="tab-pane fade show active" id="description" role="tabpanel">
+                            <h5>Deskripsi Produk</h5>
+                            <p id="productDescription">Serum Vitamin C dengan konsentrasi 20% yang diformulasikan khusus untuk mencerahkan kulit, mengurangi tanda-tanda penuaan, dan memberikan glow alami. Teksturnya ringan dan cepat meresap sehingga cocok digunakan sehari-hari.</p>
+                            
+                            <h6 class="mt-4">Manfaat:</h6>
+                            <ul>
+                                <li>Mencerahkan kulit wajah</li>
+                                <li>Mengurangi hiperpigmentasi dan flek hitam</li>
+                                <li>Melawan radikal bebas</li>
+                                <li>Meningkatkan produksi kolagen</li>
+                                <li>Melembapkan dan menghidrasi kulit</li>
+                            </ul>
+                        </div>
+
+                        <!-- Ingredients Tab -->
+                        <div class="tab-pane fade" id="ingredients" role="tabpanel">
+                            <h5>Komposisi</h5>
+                            <div class="ingredients-list">
+                                <div class="ingredient-item">
+                                    <strong>L-Ascorbic Acid (20%)</strong> - Vitamin C murni untuk brightening
+                                </div>
+                                <div class="ingredient-item">
+                                    <strong>Hyaluronic Acid</strong> - Melembapkan dan menghidrasi
+                                </div>
+                                <div class="ingredient-item">
+                                    <strong>Vitamin E</strong> - Antioksidan dan stabilizer
+                                </div>
+                                <div class="ingredient-item">
+                                    <strong>Ferulic Acid</strong> - Meningkatkan stabilitas Vitamin C
+                                </div>
+                            </div>
+                            
+                            <div class="alert alert-info mt-3">
+                                <small>📝 <strong>Note:</strong> Produk ini bebas alkohol, paraben, dan sulfat. Telah teruji dermatologis dan non-comedogenic.</small>
+                            </div>
+                        </div>
+
+                        <!-- How to Use Tab -->
+                        <div class="tab-pane fade" id="how-to-use" role="tabpanel">
+                            <h5>Cara Penggunaan</h5>
+                            <ol>
+                                <li>Bersihkan wajah dengan cleanser</li>
+                                <li>Toner (opsional)</li>
+                                <li>Ambil 2-3 tetes serum, aplikasikan ke wajah dan leher</li>
+                                <li>Tepuk-tepuk lembut hingga meresap</li>
+                                <li>Lanjutkan dengan moisturizer dan sunscreen (pagi hari)</li>
+                            </ol>
+                            
+                            <div class="usage-tips">
+                                <h6>Tips Penggunaan:</h6>
+                                <ul>
+                                    <li>Gunakan pagi dan malam hari untuk hasil maksimal</li>
+                                    <li>Simpan di tempat sejuk dan kering, hindari sinar matahari langsung</li>
+                                    <li>Lakukan patch test sebelum penggunaan pertama</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- Reviews Tab -->
+                        <div class="tab-pane fade" id="reviews" role="tabpanel">
+                            <h5>Ulasan Pelanggan</h5>
+                            <div class="review-summary mb-4">
+                                <div class="row align-items-center">
+                                    <div class="col-md-3 text-center">
+                                        <div class="average-rating">
+                                            <h2>4.8</h2>
+                                            <div class="stars">★★★★★</div>
+                                            <small>127 reviews</small>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-9">
+                                        <div class="rating-bars">
+                                            <div class="rating-bar">
+                                                <span>5 bintang</span>
+                                                <div class="progress">
+                                                    <div class="progress-bar" style="width: 85%"></div>
+                                                </div>
+                                                <span>85%</span>
+                                            </div>
+                                            <div class="rating-bar">
+                                                <span>4 bintang</span>
+                                                <div class="progress">
+                                                    <div class="progress-bar" style="width: 12%"></div>
+                                                </div>
+                                                <span>12%</span>
+                                            </div>
+                                            <div class="rating-bar">
+                                                <span>3 bintang</span>
+                                                <div class="progress">
+                                                    <div class="progress-bar" style="width: 2%"></div>
+                                                </div>
+                                                <span>2%</span>
+                                            </div>
+                                            <div class="rating-bar">
+                                                <span>2 bintang</span>
+                                                <div class="progress">
+                                                    <div class="progress-bar" style="width: 1%"></div>
+                                                </div>
+                                                <span>1%</span>
+                                            </div>
+                                            <div class="rating-bar">
+                                                <span>1 bintang</span>
+                                                <div class="progress">
+                                                    <div class="progress-bar" style="width: 0%"></div>
+                                                </div>
+                                                <span>0%</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Review List -->
+                            <div class="review-list">
+                                <div class="review-item">
+                                    <div class="review-header">
+                                        <strong>Sarah M.</strong>
+                                        <div class="stars">★★★★★</div>
+                                    </div>
+                                    <p>"Serumnya benar-benar bikin kulit glowing! Teksturnya ringan dan tidak lengket. Sudah pakai 2 minggu, kulit terlihat lebih cerah."</p>
+                                    <small class="text-muted">Posted on 15 Jan 2024</small>
+                                </div>
+
+                                <div class="review-item">
+                                    <div class="review-header">
+                                        <strong>Rina P.</strong>
+                                        <div class="stars">★★★★☆</div>
+                                    </div>
+                                    <p>"Hasilnya bagus, flek hitam berkurang. Cuma agak kering jadi harus pakai moisturizer yang tepat."</p>
+                                    <small class="text-muted">Posted on 10 Jan 2024</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Related Products -->
+            <div class="row mt-5">
+                <div class="col-12">
+                    <h3 class="mb-4">Produk Terkait</h3>
+                    <div class="row">
+                        <div class="col-md-3">
+                            <div class="product-card">
+                                <img src="image/mois.jfif" 
+                                     class="product-image" alt="Moisturizer">
+                                <div class="product-body">
+                                    <h5 class="product-title">Cleora 8x Hyalu Hydrating Moisturizer</h5>
+                                    <p class="product-description">Pelembab dengan hyaluronic acid</p>
+                                    <div class="product-price">Rp 72.500</div>
+                                    <button class="btn-product" onclick="viewProduct(2)">Lihat Detail</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="product-card">
+                                <img src="image/sunscreen.jfif" 
+                                     class="product-image" alt="Sunscreen">
+                                <div class="product-body">
+                                    <h5 class="product-title">Azarine Sunscreen SPF 50</h5>
+                                    <p class="product-description">Sunscreen broad spectrum</p>
+                                    <div class="product-price">Rp 65.000</div>
+                                    <button class="btn-product" onclick="viewProduct(3)">Lihat Detail</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="product-card">
+                                <img src="image/nia.png" 
+                                     class="product-image" alt="Niacinamide Serum">
+                                <div class="product-body">
+                                    <h5 class="product-title">Skintific Niacinamide Brightening Serum</h5>
+                                    <p class="product-description">Serum brightening dengan niacinamide</p>
+                                    <div class="product-price">Rp 108.000</div>
+                                    <button class="btn-product" onclick="viewProduct(6)">Lihat Detail</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="product-card">
+                                <img src="image/mask.jfif" 
+                                     class="product-image" alt="Clay Mask">
+                                <div class="product-body">
+                                    <h5 class="product-title">L'oreal Pure Clay Detox Mask</h5>
+                                    <p class="product-description">Masker detoks dengan clay</p>
+                                    <div class="product-price">Rp 165.000</div>
+                                    <button class="btn-product" onclick="viewProduct(5)">Lihat Detail</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="custom-footer">
+        <div class="container">
+            <div class="row">
+                <!-- Information -->
+                <div class="col-md-3 footer-section">
+                    <h5 class="footer-heading">Information</h5>
+                    <ul class="footer-links">
+                        <li><a href="aboutus.html">About Us</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms & Conditions</a></li>
+                    </ul>
+                </div>
+
+                <!-- Customer Care (links) -->
+                <div class="col-md-3 footer-section">
+                    <h5 class="footer-heading">Customer Care</h5>
+                    <ul class="footer-links">
+                        <li><a href="#">Help Center</a></li>
+                        <li><a href="#">How To Pay</a></li>
+                        <li><a href="#">Our Store</a></li>
+                    </ul>
+                </div>
+
+                <!-- Payment Options -->
+                <div class="col-md-3 footer-section">
+                    <h5 class="footer-heading">Payment Options</h5>
+                    <div class="payment-options">
+                        <img src="image/visa.png" alt="Visa">
+                        <img src="image/mastercard.png" alt="Mastercard">
+                        <img src="image/bca.png" alt="BCA">
+                        <img src="image/bni.png" alt="BNI">
+                        <img src="image/mandiri.png" alt="Mandiri">
+                        <img src="image/bri.png" alt="BRI">
+                    </div>
+                </div>
+
+                <!-- Customer Care (contact details) -->
+                <div class="col-md-3 footer-section">
+                    <h5 class="footer-heading">Customer Care</h5>
+                    <div class="footer-contact">
+                        <p>cs@glowskin.com</p>
+                        <p>0811 987 881 (WhatsApp)</p>
+                        <p style="margin-top:.5rem; font-weight:600;">Direktorat Jenderal Perlindungan Konsumen<br>dan Tertib Niaga<br>Kementerian Perdagangan Republik Indonesia</p>
+                        <p>0853-1111-1010 (WhatsApp)</p>
+                    </div>
+                </div>
+            </div>
+            
+            <hr class="mt-4 mb-4" style="border-color: rgba(255,255,255,0.1);">
+            
+            <div class="text-center">
+                <p>&copy; 2024 GlowSkin. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+    <script src="bootstrap-5.3.8-dist/js/bootstrap.min.js"></script>
+</body>
+</html>

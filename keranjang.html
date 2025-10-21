@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GlowSkin - Keranjang Belanja</title>
+    <link href="bootstrap-5.3.8-dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Header -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-gradient">
+        <div class="container">
+            <img src="image/logo.png" alt="logo" width="120" height="120" class="d-inline-block align-text-top">
+            <a class="navbar-brand d-flex align-items-center" href="index.html">
+                <span>GlowSkin</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link text-white" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link text-white" href="products.html">Produk</a></li>
+                </ul>
+            </div>
+
+            <div class="d-flex ms-2 order-lg-last">
+                <a href="keranjang.html" class="icon-btn" aria-label="Shopping cart">🛒</a>
+                <button id="darkModeToggle" type="button" class="icon-btn" aria-label="Toggle dark mode">🌙</button>
+            </div>
+
+        </div>
+    </nav>
+
+    <main class="py-4">
+        <div class="container">
+            <div class="row">
+                <!-- Left Column - Cart Items -->
+                <div class="col-lg-8">
+                    <div class="cart-header mb-4">
+                        <h2 class="cart-title">Shopping Bag</h2>
+                        <div class="select-all">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="selectAll">
+                                <label class="form-check-label" for="selectAll">
+                                    Select all
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Cart Item -->
+                    <div class="cart-item card mb-3">
+                        <div class="card-body">
+                            <div class="row align-items-center">
+                                <div class="col-1">
+                                    <input class="form-check-input item-checkbox" type="checkbox" checked>
+                                </div>
+                                <div class="col-2">
+                                    <img src="image/ff3.jpg" 
+                                         alt="Salicylic Acid Acne Clay Stick" class="cart-item-image">
+                                </div>
+                                <div class="col-6">
+                                    <h5 class="cart-item-name">Cerave Foaming Facial Cleanser</h5>
+                                    <p class="cart-item-size">Size: 87ml</p>
+                                    <div class="quantity-controls">
+                                        <button class="btn btn-outline-secondary btn-sm" onclick="decreaseQuantity(this)">-</button>
+                                        <span class="quantity-display mx-2">1</span>
+                                        <button class="btn btn-outline-secondary btn-sm" onclick="increaseQuantity(this)">+</button>
+                                    </div>
+                                </div>
+                                <div class="col-3 text-end">
+                                    <div class="cart-item-price">Rp128.800</div>
+                                    <button class="btn btn-link btn-sm text-danger p-0 mt-2" onclick="removeItem(this)">Hapus</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <hr class="my-4">
+
+                    <!-- Reform Your Rewards Section -->
+                    <div class="rewards-section card mb-4">
+                        <div class="card-body">
+                            <h6 class="rewards-title">Reform Your Rewards</h6>
+                            <p class="rewards-description mb-3">
+                                Pilih voucher, payment promotion, redeem e-Gift Card, dan Soco Point
+                            </p>
+                            <button class="btn btn-outline-primary btn-sm">Redeem Now!</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Column - Order Summary -->
+                <div class="col-lg-4">
+                    <div class="order-summary card sticky-top">
+                        <div class="card-body">
+                            <h5 class="summary-title">Subtotal</h5>
+                            <p class="summary-note text-muted small">Tanpa biaya tambahan</p>
+                            
+                            <div class="total-price mb-3">
+                                <span class="total-amount">Rp128.800</span>
+                            </div>
+
+                            <button class="btn btn-primary btn-lg w-100 mb-3" onclick="checkout()">
+                                Checkout (1)
+                            </button>
+
+                            <!-- Redeem Your Rewards -->
+                            <div class="redeem-info">
+                                <h6 class="redeem-title">Redeem Your Rewards</h6>
+                                <p class="redeem-description small text-muted">
+                                    Pesanmu akan dikirim dengan aman dalam satu eco-friendly box tanpa plastic bubble wrap.
+                                </p>
+                            </div>
+
+                            <!-- Trust Badges -->
+                            <div class="trust-badges mt-3">
+                                <div class="row text-center">
+                                    <div class="col-4">
+                                        <div class="trust-badge">🚚</div>
+                                        <small>Free Shipping</small>
+                                    </div>
+                                    <div class="col-4">
+                                        <div class="trust-badge">🔒</div>
+                                        <small>Secure Payment</small>
+                                    </div>
+                                    <div class="col-4">
+                                        <div class="trust-badge">🌱</div>
+                                        <small>Eco-Friendly</small>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="custom-footer">
+        <div class="container">
+            <div class="row">
+                <!-- Information -->
+                <div class="col-md-3 footer-section">
+                    <h5 class="footer-heading">Information</h5>
+                    <ul class="footer-links">
+                        <li><a href="aboutus.html">About Us</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms & Conditions</a></li>
+                    </ul>
+                </div>
+
+                <!-- Customer Care (links) -->
+                <div class="col-md-3 footer-section">
+                    <h5 class="footer-heading">Customer Care</h5>
+                    <ul class="footer-links">
+                        <li><a href="#">Help Center</a></li>
+                        <li><a href="#">How To Pay</a></li>
+                        <li><a href="#">Our Store</a></li>
+                    </ul>
+                </div>
+
+                <!-- Payment Options -->
+                <div class="col-md-3 footer-section">
+                    <h5 class="footer-heading">Payment Options</h5>
+                    <div class="payment-options">
+                        <img src="image/visa.png" alt="Visa">
+                        <img src="image/mastercard.png" alt="Mastercard">
+                        <img src="image/bca.png" alt="BCA">
+                        <img src="image/bni.png" alt="BNI">
+                        <img src="image/mandiri.png" alt="Mandiri">
+                        <img src="image/bri.png" alt="BRI">
+                    </div>
+                </div>
+
+                <!-- Customer Care (contact details) -->
+                <div class="col-md-3 footer-section">
+                    <h5 class="footer-heading">Customer Care</h5>
+                    <div class="footer-contact">
+                        <p>cs@glowskin.com</p>
+                        <p>0811 987 881 (WhatsApp)</p>
+                        <p style="margin-top:.5rem; font-weight:600;">Direktorat Jenderal Perlindungan Konsumen<br>dan Tertib Niaga<br>Kementerian Perdagangan Republik Indonesia</p>
+                        <p>0853-1111-1010 (WhatsApp)</p>
+                    </div>
+                </div>
+            </div>
+            
+            <hr class="mt-4 mb-4" style="border-color: rgba(255,255,255,0.1);">
+            
+            <div class="text-center">
+                <p>&copy; 2024 GlowSkin. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+    <script src="bootstrap-5.3.8-dist/js/bootstrap.min.js"></script>
+
+</body>
+</html>

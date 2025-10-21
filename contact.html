@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GlowSkin - Kontak</title>
+    <link href="bootstrap-5.3.8-dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Header dengan Bootstrap Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-gradient">
+        <div class="container">
+            <img src="image/logo.png" alt="logo" width="120" height="120" class="d-inline-block align-text-top">
+            <a class="navbar-brand d-flex align-items-center" href="index.html">
+                <span>GlowSkin</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link active text-white" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link text-white" href="products.html">Produk</a></li>
+                </ul>
+            </div>
+
+            <!-- Dark mode toggle kept visible -->
+            <div class="d-flex ms-2 order-lg-last">
+                <a href="keranjang.html" class="icon-btn" aria-label="Shopping cart">🛒</a>
+                <button id="darkModeToggle" type="button" class="icon-btn" aria-label="Toggle dark mode">🌙</button>
+            </div>
+        </div>
+    </nav>
+
+    <main class="py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h2>Hubungi Kami</h2>
+                    <form id="contactForm" class="custom-form">
+                        <div class="mb-3">
+                            <label for="name" class="form-label">Nama Lengkap</label>
+                            <input type="text" class="form-control" id="name" required>
+                            <div class="invalid-feedback">Harap isi nama lengkap</div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="email" class="form-label">Email</label>
+                            <input type="email" class="form-control" id="email" required>
+                            <div class="invalid-feedback">Harap isi email yang valid</div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="message" class="form-label">Pesan</label>
+                            <textarea class="form-control" id="message" rows="5" required></textarea>
+                            <div class="invalid-feedback">Harap isi pesan</div>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Kirim Pesan</button>
+                    </form>
+                </div>
+                <div class="col-md-6">
+                    <h2>Informasi Kontak</h2>
+                    <div class="contact-info">
+                        <p><strong>📍 Alamat:</strong><br>Jl. Kalibata No. 23, Jakarta</p>
+                        <p><strong>📞 Telepon:</strong><br>+62 812-3456-7890</p>
+                        <p><strong>✉️ Email:</strong><br>cs@glowskin.com</p>
+                        <p><strong>🕒 Jam Operasional:</strong><br>Senin - Jumat: 09:00 - 18:00</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="custom-footer">
+        <div class="container">
+            <div class="row">
+                <!-- Information -->
+                <div class="col-md-3 footer-section">
+                    <h5 class="footer-heading">Information</h5>
+                    <ul class="footer-links">
+                        <li><a href="aboutus.html">About Us</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms & Conditions</a></li>
+                    </ul>
+                </div>
+
+                <!-- Customer Care (links) -->
+                <div class="col-md-3 footer-section">
+                    <h5 class="footer-heading">Customer Care</h5>
+                    <ul class="footer-links">
+                        <li><a href="#">Help Center</a></li>
+                        <li><a href="#">How To Pay</a></li>
+                        <li><a href="#">Our Store</a></li>
+                    </ul>
+                </div>
+
+                <!-- Payment Options -->
+                <div class="col-md-3 footer-section">
+                    <h5 class="footer-heading">Payment Options</h5>
+                    <div class="payment-options">
+                        <img src="image/visa.png" alt="Visa">
+                        <img src="image/mastercard.png" alt="Mastercard">
+                        <img src="image/bca.png" alt="BCA">
+                        <img src="image/bni.png" alt="BNI">
+                        <img src="image/mandiri.png" alt="Mandiri">
+                        <img src="image/bri.png" alt="BRI">
+                    </div>
+                </div>
+
+                <!-- Customer Care (contact details) -->
+                <div class="col-md-3 footer-section">
+                    <h5 class="footer-heading">Customer Care</h5>
+                    <div class="footer-contact">
+                        <p>cs@glowskin.com</p>
+                        <p>0811 987 881 (WhatsApp)</p>
+                        <p style="margin-top:.5rem; font-weight:600;">Direktorat Jenderal Perlindungan Konsumen<br>dan Tertib Niaga<br>Kementerian Perdagangan Republik Indonesia</p>
+                        <p>0853-1111-1010 (WhatsApp)</p>
+                    </div>
+                </div>
+            </div>
+            
+            <hr class="mt-4 mb-4" style="border-color: rgba(255,255,255,0.1);">
+            
+            <div class="text-center">
+                <p>&copy; 2024 GlowSkin. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+    <script src="bootstrap-5.3.8-dist/js/bootstrap.min.js"></script>
+</body>
+</html>

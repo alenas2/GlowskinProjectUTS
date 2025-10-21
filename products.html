@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GlowSkin - Produk</title>
+    <link href="bootstrap-5.3.8-dist/css/bootstrap.min.css"rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header class="custom-header">
+        <!-- Header dengan Bootstrap Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-gradient">
+        <div class="container">
+            <img src="image/logo.png" alt="logo" width="120" height="120" class="d-inline-block align-text-top">
+            <a class="navbar-brand d-flex align-items-center" href="index.html">
+                <span>GlowSkin</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link active text-white" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link text-white" href="products.html">Produk</a></li>
+                </ul>
+            </div>
+
+            <div class="d-flex ms-2 order-lg-last">
+                <a href="keranjang.html" class="icon-btn" aria-label="Shopping cart">🛒</a>
+                <button id="darkModeToggle" type="button" class="icon-btn" aria-label="Toggle dark mode">🌙</button>
+            </div>
+    </header>
+
+    <main class="py-5">
+        <div class="container">
+            <h1 class="text-center mb-4">Koleksi Skincare</h1>
+            
+            <!-- Filter Products -->
+            <div class="row mb-4">
+                <div class="col-md-4">
+                    <input type="text" id="searchProduct" class="form-control" placeholder="Cari produk skincare...">
+                </div>
+                <div class="col-md-4">
+                    <select id="categoryFilter" class="form-select">
+                        <option value="">Semua Kategori</option>
+                        <option value="cleanser">Facial Cleanser</option>
+                        <option value="serum">Serum</option>
+                        <option value="moisturizer">Moisturizer</option>
+                        <option value="sunscreen">Sunscreen</option>
+                        <option value="mask">Face Mask</option>
+                    </select>
+                </div>
+                <div class="col-md-4">
+                    <select id="skinTypeFilter" class="form-select">
+                        <option value="">Semua Jenis Kulit</option>
+                        <option value="normal">Kulit Normal</option>
+                        <option value="berminyak">Kulit Berminyak</option>
+                        <option value="kering">Kulit Kering</option>
+                        <option value="kombinasi">Kulit Kombinasi</option>
+                        <option value="sensitif">Kulit Sensitif</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- Products Grid -->
+            <div class="row" id="productsGrid">
+                <!-- Products will be loaded by JavaScript -->
+                <div class="product-card">
+                    <img src="image/ff2.jfif" class="product-image" alt="Cerave Foaming Facial Cleanser">
+                    <div class="product-body">
+                        <h5 class="product-title">Cerave Foaming Facial Cleanser</h5>
+                        <p class="product-description">Pembersih wajah berbusa untuk kulit berminyak</p>
+                        <div class="mb-2">
+                            <span class="badge bg-secondary me-1">Berminyak</span>
+                            <span class="badge bg-secondary me-1">Kombinasi</span>
+                        </div>
+                        <div class="product-price">Rp 128.800 - 306.360</div>
+                        <button class="btn-product" onclick="viewProduct(4)">Lihat Detail</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="custom-footer">
+        <div class="container">
+            <div class="row">
+                <!-- Information -->
+                <div class="col-md-3 footer-section">
+                    <h5 class="footer-heading">Information</h5>
+                    <ul class="footer-links">
+                        <li><a href="aboutus.html">About Us</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms & Conditions</a></li>
+                    </ul>
+                </div>
+
+                <!-- Customer Care (links) -->
+                <div class="col-md-3 footer-section">
+                    <h5 class="footer-heading">Customer Care</h5>
+                    <ul class="footer-links">
+                        <li><a href="#">Help Center</a></li>
+                        <li><a href="#">How To Pay</a></li>
+                        <li><a href="#">Our Store</a></li>
+                    </ul>
+                </div>
+
+                <!-- Payment Options -->
+                <div class="col-md-3 footer-section">
+                    <h5 class="footer-heading">Payment Options</h5>
+                    <div class="payment-options">
+                        <img src="image/visa.png" alt="Visa">
+                        <img src="image/mastercard.png" alt="Mastercard">
+                        <img src="image/bca.png" alt="BCA">
+                        <img src="image/bni.png" alt="BNI">
+                        <img src="image/mandiri.png" alt="Mandiri">
+                        <img src="image/bri.png" alt="BRI">
+                    </div>
+                </div>
+
+                <!-- Customer Care (contact details) -->
+                <div class="col-md-3 footer-section">
+                    <h5 class="footer-heading">Customer Care</h5>
+                    <div class="footer-contact">
+                        <p>cs@glowskin.com</p>
+                        <p>0811 987 881 (WhatsApp)</p>
+                        <p style="margin-top:.5rem; font-weight:600;">Direktorat Jenderal Perlindungan Konsumen<br>dan Tertib Niaga<br>Kementerian Perdagangan Republik Indonesia</p>
+                        <p>0853-1111-1010 (WhatsApp)</p>
+                    </div>
+                </div>
+            </div>
+            
+            <hr class="mt-4 mb-4" style="border-color: rgba(255,255,255,0.1);">
+            
+            <div class="text-center">
+                <p>&copy; 2024 GlowSkin. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+    <script src="bootstrap-5.3.8-dist/js/bootstrap.min.js"></script>
+</body>
+</html>
